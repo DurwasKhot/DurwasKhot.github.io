@@ -103,6 +103,24 @@
   .scope-metrics{display:flex;justify-content:space-between;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);}
   .scope-metrics b{color:var(--accent);font-weight:500;}
 
+  /* Hero profile photo */
+  .photo-frame{
+    background:var(--bg-raised);border:1px solid var(--line);border-radius:var(--radius);
+    padding:14px;position:relative;
+  }
+  .photo-frame::before{
+    content:'';position:absolute;inset:-1px;border-radius:var(--radius);padding:1px;
+    background:linear-gradient(160deg,var(--accent),transparent 40%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+    -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;
+  }
+  .photo-frame img{
+    width:100%;display:block;border-radius:9px;object-fit:cover;aspect-ratio:4/4.15;filter:grayscale(0.08) contrast(1.03);
+  }
+  .photo-caption{display:flex;flex-direction:column;gap:2px;padding:14px 6px 4px;}
+  .photo-caption span:first-child{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;}
+  .photo-caption .dim{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--text-faint);}
+
   /* Profile / about */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
   @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
@@ -214,16 +232,9 @@
         </div>
       </div>
 
-      <div class="scope">
-        <div class="scope-head"><span>road_input_vibration.log</span><span class="live">● correlating</span></div>
-        <svg class="wave" viewBox="0 0 400 180" preserveAspectRatio="none">
-          <path class="wave-line" d="M0,140 C20,60 40,180 60,90 C80,20 100,150 120,70 C140,10 160,160 180,60 C200,30 220,140 240,80 C260,20 280,150 300,70 C320,30 340,130 360,90 C375,60 390,120 400,90" />
-          <path class="wave-line secondary" d="M0,100 C30,110 60,90 90,105 C120,120 150,85 180,100 C210,115 240,90 270,100 C300,110 330,95 360,100 C380,102 390,98 400,100" />
-        </svg>
-        <div class="scope-metrics">
-          <span>Steering wheel VTV: <b>2.38 → 1.64 m/s²</b></span>
-          <span>ISO 5349</span>
-        </div>
+      <div class="photo-frame">
+        <img src="assets/profile/durwas.jpg" alt="Durwas Khot, MSc graduation, Oxford Brookes University">
+        <div class="photo-caption"><span>Durwas Khot</span><span class="dim">MSc Automotive Engineering with EVs &middot; Oxford Brookes</span></div>
       </div>
     </div>
   </section>
