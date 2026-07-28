@@ -122,6 +122,45 @@
   .photo-caption span:first-child{font-family:var(--font-title);font-weight:600;font-size:15px;}
   .photo-caption .dim{font-family:var(--font-body);font-size:11.5px;color:var(--text-faint);}
 
+  /* Skills marquee — motorsport livery stripe */
+  .marquee{
+    position:relative;overflow:hidden;padding:16px 0;white-space:nowrap;
+    background:#0d1013;
+    border-top:3px solid var(--accent);
+    border-bottom:3px solid var(--accent);
+    box-shadow:inset 0 8px 14px -10px rgba(0,0,0,0.6), inset 0 -8px 14px -10px rgba(0,0,0,0.6);
+  }
+  .marquee::before{
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:repeating-linear-gradient(
+      -45deg,
+      rgba(94,230,200,0.05) 0px,
+      rgba(94,230,200,0.05) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+  }
+  .marquee::after{
+    content:'';position:absolute;left:0;right:0;bottom:-3px;height:3px;z-index:2;
+    background:repeating-linear-gradient(90deg,var(--accent-2) 0 10px,var(--bg) 10px 20px);
+  }
+  .marquee-track{
+    display:inline-flex;gap:0;animation:marquee-scroll 26s linear infinite;position:relative;z-index:2;
+  }
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  .marquee-item{
+    font-family:var(--font-body);font-size:12.5px;font-weight:600;color:var(--text);
+    text-transform:uppercase;letter-spacing:0.06em;
+    padding:8px 24px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px;
+    border-right:1px solid rgba(94,230,200,0.25);
+  }
+  .marquee-item::before{content:'▸';color:var(--accent);font-size:11px;}
+  @keyframes marquee-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion:reduce){.marquee-track{animation:none;}}
+
   /* Profile / about */
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
   @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
@@ -240,6 +279,40 @@
       </div>
     </div>
   </section>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span class="marquee-item">SolidWorks (CSWA)</span>
+      <span class="marquee-item">CATIA V5</span>
+      <span class="marquee-item">ANSYS</span>
+      <span class="marquee-item">MSC Adams</span>
+      <span class="marquee-item">MATLAB</span>
+      <span class="marquee-item">Simulink / Simscape</span>
+      <span class="marquee-item">FEA</span>
+      <span class="marquee-item">GD&amp;T</span>
+      <span class="marquee-item">DFMEA / PFMEA</span>
+      <span class="marquee-item">ISO 9001</span>
+      <span class="marquee-item">ISO 14001</span>
+      <span class="marquee-item">8D Methodology</span>
+      <span class="marquee-item">Multi-Body Dynamics</span>
+      <span class="marquee-item">Lean Principles</span>
+      <!-- duplicate set for a seamless loop -->
+      <span class="marquee-item">SolidWorks (CSWA)</span>
+      <span class="marquee-item">CATIA V5</span>
+      <span class="marquee-item">ANSYS</span>
+      <span class="marquee-item">MSC Adams</span>
+      <span class="marquee-item">MATLAB</span>
+      <span class="marquee-item">Simulink / Simscape</span>
+      <span class="marquee-item">FEA</span>
+      <span class="marquee-item">GD&amp;T</span>
+      <span class="marquee-item">DFMEA / PFMEA</span>
+      <span class="marquee-item">ISO 9001</span>
+      <span class="marquee-item">ISO 14001</span>
+      <span class="marquee-item">8D Methodology</span>
+      <span class="marquee-item">Multi-Body Dynamics</span>
+      <span class="marquee-item">Lean Principles</span>
+    </div>
+  </div>
 
   <section id="about">
     <div class="wrap">
