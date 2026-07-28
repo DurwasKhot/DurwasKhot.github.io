@@ -172,27 +172,31 @@
 
   /* projects */
   .proj-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:10px;}
-  .proj{background:var(--bg-raised);padding:30px;}
-  .proj .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);margin-bottom:16px;}
-  .proj .meta .tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:3px 10px;margin-bottom:10px;font-size:11px;}
-  .proj-thumb{width:100%;aspect-ratio:21/9;border-radius:10px;object-fit:cover;border:1px solid var(--line);margin-bottom:20px;display:block;background:var(--bg);}
-  .proj h3{margin:0 0 10px;font-size:19px;}
-  .proj p{color:var(--text-dim);margin:0 0 12px;font-size:14.5px;font-family:var(--font-body);}
-  .proj ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:14px;font-family:var(--font-body);}
-  .proj ul li{margin-bottom:6px;}
-  .proj .result{margin-top:12px;font-family:var(--font-body);font-size:13px;color:var(--accent);}
+  .work-row{display:grid;gap:1px;background:var(--line);}
+  .work-row.r1{grid-template-columns:1.7fr 1fr;}
+  .work-row.r2{grid-template-columns:1fr 1fr 1fr;}
+  .work-row.r3{grid-template-columns:1fr 1.7fr;}
+  @media(max-width:900px){.work-row.r1,.work-row.r2,.work-row.r3{grid-template-columns:1fr;}}
 
-  .proj-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
-  @media(max-width:760px){.proj-pair{grid-template-columns:1fr;}}
-  .proj-card{background:var(--bg-raised);padding:26px;}
-  .proj-thumb-card{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:var(--bg);margin-bottom:16px;}
+  .proj-card{background:var(--bg-raised);padding:26px;display:flex;flex-direction:column;}
+  .proj-card.big{padding:30px;}
+  .proj-thumb-card{width:100%;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:var(--bg);margin-bottom:16px;}
+  .proj-card.big .proj-thumb-card{aspect-ratio:16/9;}
+  .proj-card.small .proj-thumb-card{aspect-ratio:4/3;}
   .proj-card .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);margin-bottom:10px;}
   .proj-card .meta .tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:3px 10px;margin-bottom:8px;font-size:11px;}
-  .proj-card h3{margin:0 0 10px;font-size:18px;}
-  .proj-card p{color:var(--text-dim);margin:0 0 12px;font-size:14px;font-family:var(--font-body);}
-  .proj-card ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;font-family:var(--font-body);}
+  .proj-card.big h3{font-size:19px;margin:0 0 10px;}
+  .proj-card.small h3{font-size:16px;margin:0 0 8px;}
+  .proj-card p{color:var(--text-dim);margin:0 0 12px;font-family:var(--font-body);}
+  .proj-card.big p{font-size:14.5px;}
+  .proj-card.small p{font-size:13px;}
+  .proj-card ul{margin:0;padding-left:18px;color:var(--text-dim);font-family:var(--font-body);}
+  .proj-card.big ul{font-size:14px;}
+  .proj-card.small ul{font-size:12.5px;}
   .proj-card ul li{margin-bottom:6px;}
-  .proj-card .result{margin-top:12px;font-family:var(--font-body);font-size:12.5px;color:var(--accent);}
+  .proj-card .result{margin-top:12px;font-family:var(--font-body);color:var(--accent);}
+  .proj-card.big .result{font-size:13px;}
+  .proj-card.small .result{font-size:11.5px;}
 
   /* experience timeline */
   .timeline{position:relative;margin-top:20px;padding-left:26px;}
@@ -417,58 +421,100 @@
       <div class="eyebrow">04 / Selected work</div>
       <h2 class="title reveal">From industrial hydraulics to road-noise correlation.</h2>
       <div class="proj-list reveal">
-        <div class="proj">
-          <img class="proj-thumb" src="assets/projects/bentley-thesis.jpg" alt="Bentley Motors NVH thesis — flexible multi-body dynamics correlation">
-          <div class="meta"><span class="tag">NVH · Bentley Motors</span><br>May – Sep 2025</div>
-          <div>
-            <h3>High-frequency road-induced vibration correlation</h3>
-            <p>Master's thesis with Oxford Brookes University, in collaboration with Bentley Motors.</p>
-            <ul>
-              <li>Correlated high-frequency (&gt;80 Hz) road-induced vibration in vehicle structure using physical tests and flexible multi-body dynamics simulation.</li>
-              <li>Led model validation against physical test data, identifying key vibration drivers.</li>
-            </ul>
-            <div class="result">Result: model prediction accuracy +30% · steering wheel VTV 2.38 → 1.64 m/s² (ISO 5349)</div>
-          </div>
-        </div>
 
-        <div class="proj-pair">
-          <div class="proj-card">
+        <div class="work-row r1">
+          <div class="proj-card big">
+            <img class="proj-thumb-card" src="assets/projects/bentley-thesis.jpg" alt="Bentley Motors NVH thesis — flexible multi-body dynamics correlation">
+            <div class="meta"><span class="tag">NVH · Bentley Motors</span><br>May – Sep 2025</div>
+            <h3>High-frequency road-induced vibration correlation for EV/HEV systems</h3>
+            <p>Master's thesis, Oxford Brookes University, in collaboration with Bentley Motors.</p>
+            <ul>
+              <li>Correlated high-frequency (&gt;80 Hz) road-induced vibration in EV/HEV systems through test and flexible multi-body dynamics simulation, improving model prediction accuracy by 30%.</li>
+              <li>Developed flexible MBD models and PINN-based bushing characterisation under limited test data, achieving a 25% improvement in stiffness/damping correlation and more accurate load path representation under transient excitation.</li>
+              <li>Performed NVH data analysis across test cases, delivering design insights that reduced steering wheel VTV through non-linear bushing integration.</li>
+            </ul>
+            <div class="result">Result: model accuracy +30% · VTV 2.38 → 1.64 m/s² (ISO 5349)</div>
+          </div>
+          <div class="proj-card small">
             <img class="proj-thumb-card" src="assets/projects/vibroacoustic-fea.jpg" alt="Vibroacoustic FEA cabin noise reduction study">
             <div class="meta"><span class="tag">NVH · Vibroacoustics</span><br>Sep 2024 – Mar 2025</div>
             <h3>Cabin noise reduction via vibroacoustic FEA</h3>
             <p>Independent research project, Oxford Brookes University.</p>
             <ul>
               <li>Ran ANSYS vibroacoustic analysis to identify and optimise resonant frequencies in the vehicle cabin.</li>
-              <li>Positioned absorption materials at critical frequencies and modelled the full vehicle architecture, with scope for multi-source noise integration.</li>
+              <li>Positioned absorption materials at critical frequencies and modelled the full vehicle architecture.</li>
             </ul>
-            <div class="result">Result: cabin noise reduced 91.9 dB → 82.853 dB</div>
+            <div class="result">Result: cabin noise 91.9 dB → 82.853 dB</div>
           </div>
-          <div class="proj-card">
+        </div>
+
+        <div class="work-row r2">
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/ev-powertrain-electronics.jpg" alt="EV powertrain electronics — 3-phase inverter and regenerative braking">
+            <div class="meta"><span class="tag">Power electronics</span><br>Jan – Mar 2025</div>
+            <h3>EV powertrain electronics: inverter &amp; regenerative braking</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Designed and simulated a 3-phase PWM DC-AC inverter for EV powertrain applications, achieving 3800 W peak output and boosting efficiency from 47.5% to 67.9% using IGBT switching devices.</li>
+              <li>Developed a regenerative braking energy recovery model in Multisim, demonstrating 0.065 s charge / 0.049 s discharge cycles.</li>
+              <li>Identified critical performance limitations and proposed design modifications to improve converter reliability.</li>
+            </ul>
+            <div class="result">Result: efficiency 47.5% → 67.9% · 3800 W peak</div>
+          </div>
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/composite-monocoque-chassis.jpg" alt="Composite monocoque chassis crashworthiness analysis">
+            <div class="meta"><span class="tag">Structures · Crashworthiness</span><br>Jan – Mar 2025</div>
+            <h3>Composite monocoque chassis crashworthiness</h3>
+            <p>Team project, Oxford Brookes University — hydrogen vehicle application.</p>
+            <ul>
+              <li>Led structural and stress analysis of a composite monocoque chassis using LS-Dyna FEA and hand-calculation methods.</li>
+              <li>Designed dual impact attenuators (front &amp; side) in P707AG-15 carbon composite laminate and Nomex core, reducing deflection by 85% frontally and 89% at the side.</li>
+              <li>Validated against 1300 kg impacts at 13.88 m/s per Euro NCAP standards.</li>
+            </ul>
+            <div class="result">Result: deflection &minus;85% front · &minus;89% side (Euro NCAP)</div>
+          </div>
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/gt-suite-hev-simulation.jpg" alt="GT-Suite HEV powertrain simulation and gear-shift optimisation">
+            <div class="meta"><span class="tag">Powertrain simulation</span><br>Jan – Mar 2025</div>
+            <h3>Powertrain simulation &amp; gear-shift optimisation in GT-Suite</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Developed and validated ICE and power-split HEV models in GT-Suite, benchmarked against NEDC data within 1% fuel consumption accuracy and 2% CO2 accuracy.</li>
+              <li>Analysed BSFC maps, battery SOC dynamics and supervisory control logic across six drive cycles.</li>
+              <li>Optimised gear-shift strategy using dynamic programming, reducing fuel consumption by 16%.</li>
+            </ul>
+            <div class="result">Result: fuel consumption &minus;16% · within 1% of NEDC</div>
+          </div>
+        </div>
+
+        <div class="work-row r3">
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/bicycle-model-suspension.jpg" alt="Bicycle model vehicle dynamics and 4-DOF suspension optimisation">
+            <div class="meta"><span class="tag">Vehicle dynamics</span><br>Sep – Dec 2024</div>
+            <h3>Bicycle models &amp; 4-DOF suspension optimisation</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Developed and validated single-track and twin-track bicycle models in MSC Adams for a 2025 Toyota Camry Hybrid, analysing yaw rate, slip angle and lateral load transfer.</li>
+              <li>Modelled and optimised a 4-DOF suspension system using real damper dyno data, identifying an optimal damping ratio of 0.2.</li>
+              <li>Validated resonant frequency analytically (1.38 Hz) against simulation (1.3 Hz).</li>
+            </ul>
+            <div class="result">Result: damping ratio 0.2 · frequency within 6% of prediction</div>
+          </div>
+          <div class="proj-card big">
             <img class="proj-thumb-card" src="assets/projects/mac-racing-suspension.jpg" alt="MAC Racing double-wishbone suspension design">
             <div class="meta"><span class="tag">Vehicle dynamics · Formula Student</span><br>2021 – 2022</div>
-            <h3>Double-wishbone suspension for an FS electric race car</h3>
+            <h3>Double-wishbone suspension for a Formula Student electric race car</h3>
             <p>Modified Auto Club (MAC) Racing, Thane &mdash; founding member.</p>
             <ul>
-              <li>Led development of a double-wishbone suspension system, running MBD simulations in MSC Adams and CAD modelling in CATIA V5.</li>
-              <li>Optimised &plusmn;40 mm wheel travel and 35&ndash;45 mm roll centre height to improve stability and performance.</li>
+              <li>Led a 30-member multidisciplinary team in the design, development and assembly of the race car, coordinating subsystem integration and regulatory compliance.</li>
+              <li>Led design and development of a double-wishbone suspension system, running MBD simulations in MSC Adams and CAD modelling in CATIA V5, optimising &plusmn;40 mm wheel travel, 1.5&deg; camber gain during bump, and 35&ndash;45 mm roll centre height.</li>
+              <li>Conducted analytical and simulation-based validation, coordinating prototyping and manufacturing for the suspension assembly.</li>
             </ul>
             <div class="result">Result: contributed to the team winning the Best Debut Team Award</div>
           </div>
         </div>
 
-        <div class="proj">
-          <img class="proj-thumb" src="assets/projects/tritorc-hydraulic-equipment.jpg" alt="TRITORC hydraulic-mechanical equipment design">
-          <div class="meta"><span class="tag">Industrial design · TRITORC</span><br>Jun 2023 – Aug 2024</div>
-          <div>
-            <h3>Hydraulic-mechanical equipment: CAD to manufacture</h3>
-            <p>Junior Design Engineer, TRITORC Equipments.</p>
-            <ul>
-              <li>Generated 3D CAD models, 2D manufacturing drawings and FEA to validate structural strength, load distribution and operational reliability.</li>
-              <li>Applied DFMEA/PFMEA to complex assemblies and supported manufacturing problem resolution through root-cause analysis.</li>
-            </ul>
-            <div class="result">Result: reduced manufacturing complexity through iterative, cross-functional design reviews</div>
-          </div>
-        </div>
+      </div>
       </div>
     </div>
   </section>
