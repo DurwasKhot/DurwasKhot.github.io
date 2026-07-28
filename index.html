@@ -128,21 +128,6 @@
     background:#0d1013;
     border-top:3px solid var(--accent);
     border-bottom:3px solid var(--accent);
-    box-shadow:inset 0 8px 14px -10px rgba(0,0,0,0.6), inset 0 -8px 14px -10px rgba(0,0,0,0.6);
-  }
-  .marquee::before{
-    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:repeating-linear-gradient(
-      -45deg,
-      rgba(94,230,200,0.05) 0px,
-      rgba(94,230,200,0.05) 10px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-  .marquee::after{
-    content:'';position:absolute;left:0;right:0;bottom:-3px;height:3px;z-index:2;
-    background:repeating-linear-gradient(90deg,var(--accent-2) 0 10px,var(--bg) 10px 20px);
   }
   .marquee-track{
     display:inline-flex;gap:0;animation:marquee-scroll 26s linear infinite;position:relative;z-index:2;
@@ -152,7 +137,6 @@
     font-family:var(--font-body);font-size:12.5px;font-weight:600;color:var(--text);
     text-transform:uppercase;letter-spacing:0.06em;
     padding:8px 24px;white-space:nowrap;display:inline-flex;align-items:center;gap:10px;
-    border-right:1px solid rgba(94,230,200,0.25);
   }
   .marquee-item::before{content:'▸';color:var(--accent);font-size:11px;}
   @keyframes marquee-scroll{
