@@ -217,6 +217,16 @@
   .edu-card span{color:var(--text-dim);font-size:14px;font-family:var(--font-body);}
   .edu-card .grade{color:var(--accent);font-size:13px;margin-top:6px;display:block;}
 
+  /* Achievements & awards */
+  .awards-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:10px;}
+  @media(max-width:860px){.awards-row{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:500px){.awards-row{grid-template-columns:1fr;}}
+  .award-card{background:var(--bg-raised);padding:20px;display:flex;flex-direction:column;}
+  .award-thumb{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:var(--bg);margin-bottom:16px;}
+  .award-card .when{font-family:var(--font-body);font-size:11.5px;color:var(--text-faint);margin-bottom:8px;}
+  .award-card h3{font-size:15.5px;margin:0 0 6px;line-height:1.3;}
+  .award-card span.org{color:var(--accent-2);font-size:13px;font-family:var(--font-body);}
+
   /* contact */
   .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;align-items:start;margin-top:10px;}
   @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}}
@@ -246,6 +256,7 @@
       <a href="#skills">Skills</a>
       <a href="#work">Projects</a>
       <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
       <a href="#contact">Contact</a>
     </div>
     <a class="cv-btn" href="assets/documents/Durwas_Khot_CV.pdf" download>Download CV</a>
@@ -573,9 +584,42 @@
     </div>
   </section>
 
+  <section id="awards">
+    <div class="wrap">
+      <div class="eyebrow">06 / Achievements &amp; awards</div>
+      <h2 class="title reveal">Recognition along the way.</h2>
+      <div class="awards-row reveal">
+        <div class="award-card">
+          <img class="award-thumb" src="assets/awards/tritorc-outstanding-performance.jpg" alt="Outstanding Performance award, Tritorc Equipments">
+          <div class="when">April 2024</div>
+          <h3>Rewards &amp; Recognition &mdash; Outstanding Performance</h3>
+          <span class="org">Tritorc Equipments Pvt. Ltd.</span>
+        </div>
+        <div class="award-card">
+          <img class="award-thumb" src="assets/awards/endurance-e-cyclothon-2022.jpg" alt="Winner, Endurance E-Cyclothon 2022">
+          <div class="when">December 2022</div>
+          <h3>Winner &mdash; Endurance E-Cyclothon 2022</h3>
+          <span class="org">A. P. S. Institute of Technology</span>
+        </div>
+        <div class="award-card">
+          <img class="award-thumb" src="assets/awards/someshwar-technothon-2022.jpg" alt="Special Award, Someshwar Technothon 2022">
+          <div class="when">August 2022</div>
+          <h3>Special Award &mdash; Someshwar Technothon 2022</h3>
+          <span class="org">Someshwar Institute of Technology</span>
+        </div>
+        <div class="award-card">
+          <img class="award-thumb" src="assets/awards/formula-bharat-2021-debut.jpg" alt="Best Formula Student Debut Award, Formula Bharat 2021">
+          <div class="when">January 2021</div>
+          <h3>Best Formula Student Debut Award</h3>
+          <span class="org">Formula Bharat 2021</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact">
     <div class="wrap">
-      <div class="eyebrow">06 / Contact</div>
+      <div class="eyebrow">07 / Contact</div>
       <h2 class="title reveal">Hiring for a design or NVH role?</h2>
       <p class="lede reveal">I'm looking for graduate and junior opportunities in mechanical design, NVH, vehicle dynamics and CAE. Let's talk about how I could contribute to your team.</p>
       <div class="contact-grid">
