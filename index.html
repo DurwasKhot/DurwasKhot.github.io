@@ -172,15 +172,27 @@
 
   /* projects */
   .proj-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:10px;}
-  .proj{background:var(--bg-raised);padding:30px;display:grid;grid-template-columns:190px 1fr;gap:26px;}
-  @media(max-width:760px){.proj{grid-template-columns:1fr;}}
-  .proj .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);}
+  .proj{background:var(--bg-raised);padding:30px;}
+  .proj .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);margin-bottom:16px;}
   .proj .meta .tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:3px 10px;margin-bottom:10px;font-size:11px;}
+  .proj-thumb{width:100%;aspect-ratio:21/9;border-radius:10px;object-fit:cover;border:1px solid var(--line);margin-bottom:20px;display:block;background:var(--bg);}
   .proj h3{margin:0 0 10px;font-size:19px;}
   .proj p{color:var(--text-dim);margin:0 0 12px;font-size:14.5px;font-family:var(--font-body);}
   .proj ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:14px;font-family:var(--font-body);}
   .proj ul li{margin-bottom:6px;}
   .proj .result{margin-top:12px;font-family:var(--font-body);font-size:13px;color:var(--accent);}
+
+  .proj-pair{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);}
+  @media(max-width:760px){.proj-pair{grid-template-columns:1fr;}}
+  .proj-card{background:var(--bg-raised);padding:26px;}
+  .proj-thumb-card{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:var(--bg);margin-bottom:16px;}
+  .proj-card .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);margin-bottom:10px;}
+  .proj-card .meta .tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:3px 10px;margin-bottom:8px;font-size:11px;}
+  .proj-card h3{margin:0 0 10px;font-size:18px;}
+  .proj-card p{color:var(--text-dim);margin:0 0 12px;font-size:14px;font-family:var(--font-body);}
+  .proj-card ul{margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px;font-family:var(--font-body);}
+  .proj-card ul li{margin-bottom:6px;}
+  .proj-card .result{margin-top:12px;font-family:var(--font-body);font-size:12.5px;color:var(--accent);}
 
   /* experience timeline */
   .timeline{position:relative;margin-top:20px;padding-left:26px;}
@@ -406,6 +418,7 @@
       <h2 class="title reveal">From industrial hydraulics to road-noise correlation.</h2>
       <div class="proj-list reveal">
         <div class="proj">
+          <img class="proj-thumb" src="assets/projects/bentley-thesis.jpg" alt="Bentley Motors NVH thesis — flexible multi-body dynamics correlation">
           <div class="meta"><span class="tag">NVH · Bentley Motors</span><br>May – Sep 2025</div>
           <div>
             <h3>High-frequency road-induced vibration correlation</h3>
@@ -417,9 +430,11 @@
             <div class="result">Result: model prediction accuracy +30% · steering wheel VTV 2.38 → 1.64 m/s² (ISO 5349)</div>
           </div>
         </div>
-        <div class="proj">
-          <div class="meta"><span class="tag">NVH · Vibroacoustics</span><br>Sep 2024 – Mar 2025</div>
-          <div>
+
+        <div class="proj-pair">
+          <div class="proj-card">
+            <img class="proj-thumb-card" src="assets/projects/vibroacoustic-fea.jpg" alt="Vibroacoustic FEA cabin noise reduction study">
+            <div class="meta"><span class="tag">NVH · Vibroacoustics</span><br>Sep 2024 – Mar 2025</div>
             <h3>Cabin noise reduction via vibroacoustic FEA</h3>
             <p>Independent research project, Oxford Brookes University.</p>
             <ul>
@@ -428,10 +443,9 @@
             </ul>
             <div class="result">Result: cabin noise reduced 91.9 dB → 82.853 dB</div>
           </div>
-        </div>
-        <div class="proj">
-          <div class="meta"><span class="tag">Vehicle dynamics · Formula Student</span><br>2021 – 2022</div>
-          <div>
+          <div class="proj-card">
+            <img class="proj-thumb-card" src="assets/projects/mac-racing-suspension.jpg" alt="MAC Racing double-wishbone suspension design">
+            <div class="meta"><span class="tag">Vehicle dynamics · Formula Student</span><br>2021 – 2022</div>
             <h3>Double-wishbone suspension for an FS electric race car</h3>
             <p>Modified Auto Club (MAC) Racing, Thane &mdash; founding member.</p>
             <ul>
@@ -441,7 +455,9 @@
             <div class="result">Result: contributed to the team winning the Best Debut Team Award</div>
           </div>
         </div>
+
         <div class="proj">
+          <img class="proj-thumb" src="assets/projects/tritorc-hydraulic-equipment.jpg" alt="TRITORC hydraulic-mechanical equipment design">
           <div class="meta"><span class="tag">Industrial design · TRITORC</span><br>Jun 2023 – Aug 2024</div>
           <div>
             <h3>Hydraulic-mechanical equipment: CAD to manufacture</h3>
