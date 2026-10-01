@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Durwas Khot | Mechanical Design & NVH Engineer</title>
+<title>Durwas B. Khot </title>
 <meta name="description" content="Durwas Khot's engineering portfolio: mechanical design, NVH, vehicle dynamics and CAE.">
 <meta name="theme-color" content="#0b0e13">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,46 +170,33 @@
   .chip-row{display:flex;flex-wrap:wrap;gap:6px;}
   .chip{font-size:12px;padding:4px 10px;background:var(--accent-soft);color:var(--accent);border-radius:6px;font-family:var(--font-body);}
 
-  /* projects — image tile grid with hover reveal */
-  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px;}
-  @media(max-width:860px){.work-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:560px){.work-grid{grid-template-columns:1fr;}}
-  .work-tile{
-    position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;
-    border:1px solid var(--line);background:var(--bg-raised);cursor:default;
-  }
-  .work-tile img{
-    width:100%;height:100%;object-fit:cover;display:block;
-    transition:transform 0.5s ease,filter 0.5s ease;
-    filter:grayscale(0.15) brightness(0.85);
-  }
-  .work-tile:hover img{transform:scale(1.06);filter:grayscale(0) brightness(0.55);}
-  .work-tile::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(11,14,19,0.95) 0%,rgba(11,14,19,0.55) 35%,rgba(11,14,19,0.05) 65%);
-    pointer-events:none;
-  }
-  .tile-content{position:absolute;left:0;right:0;bottom:0;padding:20px;z-index:2;}
-  .tile-tag{font-family:var(--font-body);font-size:10.5px;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;display:block;}
-  .tile-title{font-family:var(--font-title);font-size:17px;font-weight:600;color:var(--text);margin:0;line-height:1.25;}
-  .tile-detail{
-    max-height:0;opacity:0;overflow:hidden;
-    transition:max-height 0.4s ease,opacity 0.35s ease,margin-top 0.4s ease;
-    margin-top:0;
-  }
-  .work-tile:hover .tile-detail{max-height:220px;opacity:1;margin-top:12px;}
-  .tile-detail p{font-family:var(--font-body);font-size:12.5px;color:var(--text-dim);margin:0 0 8px;line-height:1.5;}
-  .tile-result{font-family:var(--font-body);font-size:11.5px;color:var(--accent);font-weight:600;}
-  .work-tile.big{grid-row:span 1;}
-  @media(min-width:861px){.work-tile.big{grid-column:span 2;aspect-ratio:8/5;}}
+  /* projects */
+  .proj-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:10px;}
+  .work-row{display:grid;gap:1px;background:var(--line);}
+  .work-row.r1{grid-template-columns:1.7fr 1fr;}
+  .work-row.r2{grid-template-columns:1fr 1fr 1fr;}
+  .work-row.r3{grid-template-columns:1fr 1.7fr;}
+  @media(max-width:900px){.work-row.r1,.work-row.r2,.work-row.r3{grid-template-columns:1fr;}}
 
-  /* experience layout — timeline + side images */
-  .experience-layout{display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:start;}
-  @media(max-width:860px){.experience-layout{grid-template-columns:1fr;}}
-  .exp-images{display:flex;flex-direction:column;gap:18px;position:sticky;top:90px;}
-  @media(max-width:860px){.exp-images{position:static;flex-direction:row;}}
-  @media(max-width:560px){.exp-images{flex-direction:column;}}
-  .exp-img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--radius);border:1px solid var(--line);background:var(--bg-raised);display:block;}
+  .proj-card{background:var(--bg-raised);padding:26px;display:flex;flex-direction:column;}
+  .proj-card.big{padding:30px;}
+  .proj-thumb-card{width:100%;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block;background:var(--bg);margin-bottom:16px;}
+  .proj-card.big .proj-thumb-card{aspect-ratio:16/9;}
+  .proj-card.small .proj-thumb-card{aspect-ratio:4/3;}
+  .proj-card .meta{font-family:var(--font-body);font-size:12px;color:var(--text-faint);margin-bottom:10px;}
+  .proj-card .meta .tag{display:inline-block;color:var(--accent);border:1px solid var(--accent);border-radius:99px;padding:3px 10px;margin-bottom:8px;font-size:11px;}
+  .proj-card.big h3{font-size:19px;margin:0 0 10px;}
+  .proj-card.small h3{font-size:16px;margin:0 0 8px;}
+  .proj-card p{color:var(--text-dim);margin:0 0 12px;font-family:var(--font-body);}
+  .proj-card.big p{font-size:14.5px;}
+  .proj-card.small p{font-size:13px;}
+  .proj-card ul{margin:0;padding-left:18px;color:var(--text-dim);font-family:var(--font-body);}
+  .proj-card.big ul{font-size:14px;}
+  .proj-card.small ul{font-size:12.5px;}
+  .proj-card ul li{margin-bottom:6px;}
+  .proj-card .result{margin-top:12px;font-family:var(--font-body);color:var(--accent);}
+  .proj-card.big .result{font-size:13px;}
+  .proj-card.small .result{font-size:11.5px;}
 
   /* experience timeline */
   .timeline{position:relative;margin-top:20px;padding-left:26px;}
@@ -261,8 +248,8 @@
 <header>
   <nav>
     <a href="#top" class="brand">
-      <span class="mark">DK</span>
-      <span>Durwas Khot<small>Mechanical Design &amp; NVH Engineer</small></span>
+      <span class="mark">DK.</span>
+      <span>Durwas Khot<small> </small></span>
     </a>
     <div class="navlinks">
       <a href="#about">About</a>
@@ -281,25 +268,24 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="kicker"><span class="dot"></span> Open to Design Engineer &amp; NVH roles &middot; United Kingdom</div>
-        <h1>Hi, I'm <span>Durwas Khot.</span></h1>
-        <div class="role">Mechanical Design Engineer &middot; NVH &amp; Simulation</div>
-        <p class="bio">I combine Formula Student leadership, industry mechanical design experience and simulation-led engineering to understand vehicle behaviour and turn analysis into practical design decisions.</p>
+        <h1>Hi, I'm <span>Durwas</span></h1>
+        <div class="role">Mechanical Design Engineer &middot; NVH &amp; CAE Simulation</div>
+        <p class="bio">I combine Formula Student leadership, industry mechanical design experience and simulation-led engineering to understand system behaviour and turn analysis into practical design decisions.</p>
         <div class="cta-row">
-          <a href="#work" class="btn btn-primary">View My Projects ↘</a>
+          <a href="#work" class="btn btn-primary">View My Projects </a>
           <a href="assets/documents/Durwas_Khot_CV.pdf" download class="btn btn-ghost">Download My CV</a>
         </div>
         <div class="stat-row">
           <div class="stat"><b>MSc</b><span>Automotive Eng, Oxford Brookes University</span></div>
           <div class="stat"><b>BEng</b><span>Mechanical Eng, University of Mumbai</span></div>
           <div class="stat"><b>1:1</b><span>MSC Distinction, Oxford Brookes University</span></div>
-          <div class="stat"><b>30</b><span>Person team led, Formula Student</span></div>
+          <div class="stat"><b>30+</b><span>Person team led, Formula Student</span></div>
         </div>
       </div>
 
       <div class="photo-frame">
         <img src="assets/profile/durwas.jpg" alt="Durwas Khot, MSc graduation, Oxford Brookes University">
-        <div class="photo-caption"><span>Durwas Khot</span><span class="dim">MSc Automotive Engineering with EVs &middot; Oxford Brookes</span></div>
+        <div class="photo-caption"><span>Durwas Khot</span><span class="dim">MSc Engineering &middot; Oxford Brookes University</span></div>
       </div>
     </div>
   </section>
@@ -340,38 +326,7 @@
 
   <section id="about">
     <div class="wrap">
-      <div class="eyebrow">01 / Profile</div>
-      <h2 class="title reveal">An engineer who takes a design from concept to validated build.</h2>
-      <div class="about-grid">
-        <div class="reveal">
-          <p>I am Durwas Khot, an Automotive Engineering MSc graduate from Oxford Brookes University with a BEng Mechanical Engineering degree, engineering, research and industry experience and a strong Formula Student background.</p>
-          <p>I enjoy working where I can design, simulate and build engineering solutions. I define the engineering question, build the right level of model, validate the response and communicate what the result means for the design. I am now looking for a graduate or junior role where I can contribute that practical, simulation-led mindset to an automotive or high-performance engineering team.</p>
-        </div>
-        <div class="reveal">
-          <a href="#experience" class="btn btn-ghost" style="margin-bottom:20px;">View engineering journey →</a>
-          <div class="scope" style="padding:22px;">
-            <div class="scope-head"><span>Target Roles</span></div>
-            <div class="pill-row">
-              <span class="pill">Design Engineer</span>
-              <span class="pill">NVH &amp; Simulation Engineer</span>
-              <span class="pill">Mechanical Design Engineer</span>
-              <span class="pill">Vehicle Dynamics Engineer</span>
-              <span class="pill">CAE Engineer</span>
-            </div>
-            <div class="scope-head" style="margin-top:22px;"><span>Based in</span></div>
-            <div class="pill-row">
-              <span class="pill">High Wycombe, UK</span>
-              <span class="pill">Valid Right to work in United Kingdom &mdash; No sponsorship needed</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="eyebrow">02 / Capability map</div>
+      <div class="eyebrow">01 / Capability map</div>
       <h2 class="title reveal">Where design, dynamics and validation meet.</h2>
       <div class="cap-grid reveal">
         <div class="cap-cell">
@@ -391,7 +346,7 @@
         </div>
         <div class="cap-cell">
           <div class="num">04</div>
-          <h3>Quality &amp; process</h3>
+          <h3>Quality &amp; Process</h3>
           <p>DFMEA/PFMEA, 8D root-cause resolution, ISO 9001/14001 audits and lean, cross-functional collaboration.</p>
         </div>
       </div>
@@ -400,14 +355,13 @@
 
   <section id="skills">
     <div class="wrap">
-      <div class="eyebrow">03 / Skills</div>
+      <div class="eyebrow">02 / Skills</div>
       <h2 class="title reveal">Tools I use to get from problem to validated design.</h2>
-      <p class="lede reveal">Software is the means, not the message &mdash; but here's what sits behind the work.</p>
       <div class="skill-cols reveal">
         <div class="skill-card">
           <div class="tag">Design &amp; CAD</div>
-          <h3>CAD, CAM &amp; documentation</h3>
-          <p>3D modelling, 2D drawings, GD&amp;T and technical documentation for manufacture.</p>
+          <h3>CAD, CAM &amp; Documentation</h3>
+          <p>3D modelling, 2D drawings, GD&amp;T and Technical documentation for manufacturing.</p>
           <div class="chip-row">
             <span class="chip">SolidWorks (CSWA)</span>
             <span class="chip">CATIA V5</span>
@@ -415,8 +369,8 @@
         </div>
         <div class="skill-card">
           <div class="tag">Simulation</div>
-          <h3>FEA, MBD &amp; systems modelling</h3>
-          <p>Structural and vibroacoustic FEA, multi-body dynamics, and dynamic system modelling.</p>
+          <h3>FEA, MBD &amp; Systems modelling</h3>
+          <p>Structural and vibroacoustic FEA, Rigid/Flexible multi-body dynamics, and Dynamic system modelling.</p>
           <div class="chip-row">
             <span class="chip">ANSYS</span>
             <span class="chip">MSC Adams</span>
@@ -427,7 +381,7 @@
         <div class="skill-card">
           <div class="tag">Process &amp; quality</div>
           <h3>Engineering &amp; QMS</h3>
-          <p>Project management, quality systems and root-cause problem solving.</p>
+          <p>Project management, Quality systems and Root-cause problem solving.</p>
           <div class="chip-row">
             <span class="chip">DFMEA / PFMEA</span>
             <span class="chip">ISO 9001</span>
@@ -442,92 +396,99 @@
 
   <section id="work">
     <div class="wrap">
-      <div class="eyebrow">04 / Selected work</div>
+      <div class="eyebrow">03 / Selected work</div>
       <h2 class="title reveal">From industrial hydraulics to road-noise correlation.</h2>
-      <p class="lede reveal">Hover a tile for the brief and the result.</p>
-      <div class="work-grid reveal">
+      <div class="proj-list reveal">
 
-        <div class="work-tile big">
-          <img src="assets/projects/bentley-thesis.png" alt="Bentley Motors NVH thesis — flexible multi-body dynamics correlation">
-          <div class="tile-content">
-            <span class="tile-tag">NVH · Bentley Motors · May–Sep 2025</span>
-            <h3 class="tile-title">High-Frequency Road-Induced Vibration Correlation</h3>
-            <div class="tile-detail">
-              <p>Master's thesis, Oxford Brookes University, in collaboration with Bentley Motors. Correlated high-frequency (&gt;80 Hz) road-induced vibration in EV/HEV systems through test and flexible multi-body dynamics simulation, with PINN-based bushing characterisation.</p>
-              <div class="tile-result">Result: model accuracy +30% · VTV 2.38 → 1.64 m/s²</div>
-            </div>
+        <div class="work-row r1">
+          <div class="proj-card big">
+            <img class="proj-thumb-card" src="assets/projects/bentley-thesis.png" alt="Bentley Motors NVH thesis — flexible multi-body dynamics correlation">
+            <div class="meta"><span class="tag">NVH · Bentley Motors</span><br>May – September 2025</div>
+            <h3>High-frequency road-induced vibration correlation for EV/HEV systems</h3>
+            <p>Master's thesis, Oxford Brookes University, in collaboration with Bentley Motors.</p>
+            <ul>
+              <li>Correlated high-frequency (&gt;80 Hz) road-induced vibration in EV/HEV systems through test and flexible multi-body dynamics simulation, improving model prediction accuracy by 30%.</li>
+              <li>Developed flexible MBD models and PINN-based bushing characterisation under limited test data, achieving a 25% improvement in stiffness/damping correlation and more accurate load path representation under transient excitation.</li>
+              <li>Performed NVH data analysis across test cases, delivering design insights that reduced steering wheel VTV through non-linear bushing integration.</li>
+            </ul>
+            <div class="result">Result: Model accuracy +30% · VTV 2.38 → 1.64 m/s² (ISO 5349)</div>
+          </div>
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/vibroacoustic-fea.png" alt="Vibroacoustic FEA cabin noise reduction study">
+            <div class="meta"><span class="tag">NVH · Vibroacoustics</span><br>September 2024 – Mar 2025</div>
+            <h3>Cabin noise reduction via vibroacoustic FEA</h3>
+            <p>Independent research project, Oxford Brookes University.</p>
+            <ul>
+              <li>Ran ANSYS vibroacoustic analysis to identify and optimise resonant frequencies in the vehicle cabin.</li>
+              <li>Positioned absorption materials at critical frequencies and modelled the full vehicle architecture.</li>
+            </ul>
+            <div class="result">Result: Cabin noise 91.9 dB → 82.853 dB</div>
           </div>
         </div>
 
-        <div class="work-tile">
-          <img src="assets/projects/vibroacoustic-fea.png" alt="Vibroacoustic FEA cabin noise reduction study">
-          <div class="tile-content">
-            <span class="tile-tag">NVH · Vibroacoustics · 2024–25</span>
-            <h3 class="tile-title">Cabin Noise Reduction via Vibroacoustic FEA</h3>
-            <div class="tile-detail">
-              <p>Independent research project, Oxford Brookes University. Ran ANSYS vibroacoustic analysis to identify and optimise resonant frequencies, positioning absorption materials at critical points.</p>
-              <div class="tile-result">Result: cabin noise 91.9 dB → 82.853 dB</div>
-            </div>
+        <div class="work-row r2">
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/ev-powertrain-electronics.png" alt="EV powertrain electronics — 3-phase inverter and regenerative braking">
+            <div class="meta"><span class="tag">Power electronics</span><br>January – March 2025</div>
+            <h3>EV powertrain electronics: inverter &amp; regenerative braking</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Designed and simulated a 3-phase PWM DC-AC inverter for EV powertrain applications, achieving 3800 W peak output and boosting efficiency from 47.5% to 67.9% using IGBT switching devices.</li>
+              <li>Developed a regenerative braking energy recovery model in Multisim, demonstrating 0.065 s charge / 0.049 s discharge cycles.</li>
+              <li>Identified critical performance limitations and proposed design modifications to improve converter reliability.</li>
+            </ul>
+            <div class="result">Result: Efficiency 47.5% → 67.9% · 3800 W peak</div>
+          </div>
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/composite-monocoque-chassis.png" alt="Composite monocoque chassis crashworthiness analysis">
+            <div class="meta"><span class="tag">Structures · Crashworthiness</span><br>January – March 2025</div>
+            <h3>Composite monocoque chassis crashworthiness</h3>
+            <p>Team project, Oxford Brookes University — hydrogen vehicle application.</p>
+            <ul>
+              <li>Led structural and stress analysis of a composite monocoque chassis using LS-Dyna FEA and hand-calculation methods.</li>
+              <li>Designed dual impact attenuators (front &amp; side) in P707AG-15 carbon composite laminate and Nomex core, reducing deflection by 85% frontally and 89% at the side.</li>
+              <li>Validated against 1300 kg impacts at 13.88 m/s per Euro NCAP standards.</li>
+            </ul>
+            <div class="result">Result: Deflection &minus;85% front · &minus;89% side (Euro NCAP)</div>
+          </div>
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/gt-suite-hev-simulation.png" alt="GT-Suite HEV powertrain simulation and gear-shift optimisation">
+            <div class="meta"><span class="tag">Powertrain simulation</span><br>January – March 2025</div>
+            <h3>Powertrain simulation &amp; gear-shift optimisation in GT-Suite</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Developed and validated ICE and power-split HEV models in GT-Suite, benchmarked against NEDC data within 1% fuel consumption accuracy and 2% CO2 accuracy.</li>
+              <li>Analysed BSFC maps, battery SOC dynamics and supervisory control logic across six drive cycles.</li>
+              <li>Optimised gear-shift strategy using dynamic programming, reducing fuel consumption by 16%.</li>
+            </ul>
+            <div class="result">Result: Fuel consumption &minus;16% · within 1% of NEDC</div>
           </div>
         </div>
 
-        <div class="work-tile">
-          <img src="assets/projects/ev-powertrain-electronics.png" alt="EV powertrain electronics — 3-phase inverter and regenerative braking">
-          <div class="tile-content">
-            <span class="tile-tag">Power Electronics · Jan–Mar 2025</span>
-            <h3 class="tile-title">EV Powertrain Electronics</h3>
-            <div class="tile-detail">
-              <p>Oxford Brookes University. Designed and simulated a 3-phase PWM DC-AC inverter and a regenerative braking energy recovery model in Multisim.</p>
-              <div class="tile-result">Result: efficiency 47.5% → 67.9% · 3800 W peak</div>
-            </div>
+        <div class="work-row r3">
+          <div class="proj-card small">
+            <img class="proj-thumb-card" src="assets/projects/bicycle-model-suspension.png" alt="Bicycle model vehicle dynamics and 4-DOF suspension optimisation">
+            <div class="meta"><span class="tag">Vehicle dynamics</span><br>September – December 2024</div>
+            <h3>Bicycle models &amp; 4-DOF suspension optimisation</h3>
+            <p>Oxford Brookes University.</p>
+            <ul>
+              <li>Developed and validated single-track and twin-track bicycle models in MSC Adams for a 2025 Toyota Camry Hybrid, analysing yaw rate, slip angle and lateral load transfer.</li>
+              <li>Modelled and optimised a 4-DOF suspension system using real damper dyno data, identifying an optimal damping ratio of 0.2.</li>
+              <li>Validated resonant frequency analytically (1.38 Hz) against simulation (1.3 Hz).</li>
+            </ul>
+            <div class="result">Result: Damping ratio 0.2 · frequency within 6% of prediction</div>
           </div>
-        </div>
-
-        <div class="work-tile">
-          <img src="assets/projects/composite-monocoque-chassis.png" alt="Composite monocoque chassis crashworthiness analysis">
-          <div class="tile-content">
-            <span class="tile-tag">Structures · Jan–Mar 2025</span>
-            <h3 class="tile-title">Composite Monocoque Chassis Crashworthiness</h3>
-            <div class="tile-detail">
-              <p>Team project, Oxford Brookes University — hydrogen vehicle application. LS-Dyna FEA and dual impact attenuators in carbon composite laminate with Nomex core.</p>
-              <div class="tile-result">Result: deflection &minus;85% front · &minus;89% side (Euro NCAP)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-tile">
-          <img src="assets/projects/gt-suite-hev-simulation.png" alt="GT-Suite HEV powertrain simulation and gear-shift optimisation">
-          <div class="tile-content">
-            <span class="tile-tag">Powertrain Sim · Jan–Mar 2025</span>
-            <h3 class="tile-title">Powertrain Simulation &amp; Gear-Shift Optimisation</h3>
-            <div class="tile-detail">
-              <p>Oxford Brookes University. GT-Suite ICE and power-split HEV models benchmarked against NEDC data, with dynamic-programming gear-shift optimisation.</p>
-              <div class="tile-result">Result: fuel consumption &minus;16% · within 1% of NEDC</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-tile">
-          <img src="assets/projects/bicycle-model-suspension.png" alt="Bicycle model vehicle dynamics and 4-DOF suspension optimisation">
-          <div class="tile-content">
-            <span class="tile-tag">Vehicle Dynamics · Sep–Dec 2024</span>
-            <h3 class="tile-title">Bicycle Models &amp; 4-DOF Suspension Optimisation</h3>
-            <div class="tile-detail">
-              <p>Oxford Brookes University. MSC Adams single/twin-track bicycle models for a 2025 Toyota Camry Hybrid, plus a 4-DOF suspension model tuned with real damper dyno data.</p>
-              <div class="tile-result">Result: damping ratio 0.2 · frequency within 6% of prediction</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-tile big">
-          <img src="assets/projects/mac-racing-suspension.png" alt="MAC Racing double-wishbone suspension design">
-          <div class="tile-content">
-            <span class="tile-tag">Vehicle Dynamics · Formula Student · 2021–22</span>
-            <h3 class="tile-title">Double-Wishbone Suspension, Formula Student Race Car</h3>
-            <div class="tile-detail">
-              <p>Modified Auto Club (MAC) Racing, Thane — founding member. Led a 30-member team; designed the double-wishbone suspension with MSC Adams MBD and CATIA V5 CAD, optimising wheel travel, camber gain and roll centre height.</p>
-              <div class="tile-result">Result: contributed to the Best Debut Team Award</div>
-            </div>
+          <div class="proj-card big">
+            <img class="proj-thumb-card" src="assets/projects/mac-racing-suspension.png" alt="MAC Racing double-wishbone suspension design">
+            <div class="meta"><span class="tag">Vehicle dynamics · Formula Student</span><br>May 2021 – December 2022</div>
+            <h3>Double-wishbone suspension for a Formula Student electric race car</h3>
+            <p>Modified Auto Club (MAC) Racing, Thane &mdash; founding member.</p>
+            <ul>
+              <li>Led a 30-member multidisciplinary team in the design, development and assembly of the race car, coordinating subsystem integration and regulatory compliance.</li>
+              <li>Led design and development of a double-wishbone suspension system, running MBD simulations in MSC Adams and CAD modelling in CATIA V5, optimising &plusmn;40 mm wheel travel, 1.5&deg; camber gain during bump, and 35&ndash;45 mm roll centre height.</li>
+              <li>Conducted analytical and simulation-based validation, coordinating prototyping and manufacturing for the suspension assembly.</li>
+            </ul>
+            <div class="result">Result: Contributed to the team winning the Best Debut Team Award</div>
           </div>
         </div>
 
@@ -537,59 +498,52 @@
 
   <section id="experience">
     <div class="wrap">
-      <div class="eyebrow">05 / Experience</div>
+      <div class="eyebrow">04 / Experience</div>
       <h2 class="title reveal">From Formula Student to industrial design to Bentley-collaborative research.</h2>
-      <div class="experience-layout">
-        <div class="timeline reveal">
-          <div class="t-item">
-            <div class="when">May 2025 &ndash; Sep 2025 &middot; Oxford, UK</div>
-            <h3>Master's Thesis Student</h3>
-            <div class="org">Oxford Brookes University &middot; in collaboration with Bentley Motors</div>
-            <p>Correlated high-frequency road-induced vibration through test and flexible multi-body dynamics simulation, delivering design insights validated against ISO 5349 comfort metrics.</p>
-          </div>
-          <div class="t-item">
-            <div class="when">Sep 2024 &ndash; Mar 2025 &middot; Oxford, UK</div>
-            <h3>Vibroacoustic Research Project</h3>
-            <div class="org">Oxford Brookes University</div>
-            <p>Reduced cabin noise through ANSYS vibroacoustic analysis and strategic absorption-material placement at critical resonant frequencies.</p>
-          </div>
-          <div class="t-item">
-            <div class="when">Jun 2023 &ndash; Aug 2024 &middot; Mumbai, India</div>
-            <h3>Junior Design Engineer</h3>
-            <div class="org">TRITORC Equipments</div>
-            <p>Designed hydraulic-mechanical industrial systems from CAD through FEA validation, maintained technical documentation and BOM control, and led cross-functional design reviews.</p>
-          </div>
-          <div class="t-item">
-            <div class="when">Jan 2022 &ndash; Dec 2022 &middot; Thane, India</div>
-            <h3>Team Manager &amp; Suspension Lead</h3>
-            <div class="org">Modified Auto Club (MAC) Racing &middot; Founding member</div>
-            <p>Led a 30-member team through design, prototyping, manufacturing and assembly of an FS electric race car, coordinating timelines, subsystem integration and regulatory compliance.</p>
-          </div>
-          <div class="t-item">
-            <div class="when">May 2021 &ndash; Dec 2021 &middot; Thane, India</div>
-            <h3>Head, Vehicle Dynamics Department</h3>
-            <div class="org">Modified Auto Club (MAC) Racing &middot; Founding member</div>
-            <p>Established the vehicle dynamics function for a newly founded Formula Student team, laying the groundwork for the team's suspension programme.</p>
-          </div>
+      <div class="timeline reveal">
+        <div class="t-item">
+          <div class="when">May 2025 &ndash; Sep 2025 &middot; Oxford, UK</div>
+          <h3>Master's Thesis Student</h3>
+          <div class="org">Oxford Brookes University &middot; In collaboration with Bentley Motors</div>
+          <p>Correlated high-frequency road-induced vibration through test and flexible multi-body dynamics simulation, delivering design insights validated against ISO 5349 comfort metrics.</p>
         </div>
-
-        <div class="exp-images reveal">
-          <img class="exp-img" src="assets/experiences/image1.jpeg" alt="Durwas Khot — experience highlight one">
-          <img class="exp-img" src="assets/experiences/image1.jpg" alt="Durwas Khot — experience highlight two">
+        <div class="t-item">
+          <div class="when">Jun 2023 &ndash; Aug 2024 &middot; Mumbai, India</div>
+          <h3>Junior Design Engineer</h3>
+          <div class="org">TRITORC Equipments</div>
+          <p>Designed hydraulic-mechanical industrial systems from CAD through FEA validation, maintained technical documentation and BOM control, and led cross-functional design reviews.</p>
+        </div>
+        <div class="t-item">
+          <div class="when">Jan 2022 &ndash; Dec 2022 &middot; Thane, India</div>
+          <h3>Team Manager &amp; Suspension Lead</h3>
+          <div class="org">MAC Racing India &middot; Founding member</div>
+          <p>Led a 30-member team through design, prototyping, manufacturing and assembly of an FS electric race car, coordinating timelines, subsystem integration and regulatory compliance.</p>
+        </div>
+        <div class="t-item">
+          <div class="when">May 2021 &ndash; Dec 2021 &middot; Thane, India</div>
+          <h3>Head, Vehicle Dynamics Department</h3>
+          <div class="org">MAC Racing India &middot; Co-founding member</div>
+          <p>Established the vehicle dynamics function for a newly founded Formula Student team, laying the groundwork for the team's suspension programme.</p>
         </div>
       </div>
 
+        <div class="exp-images reveal">
+          <img class="exp-img" src="assets/experience/image-one.jpg" alt="Durwas Khot — experience highlight one">
+          <img class="exp-img" src="assets/experience/image-two.jpg" alt="Durwas Khot — experience highlight two">
+        </div>
+      </div>
+      
       <div class="edu-row reveal">
         <div class="edu-card">
           <div class="when">Sep 2024 &ndash; Sep 2025</div>
           <h3>MSc Automotive Engineering with Electric Vehicles</h3>
-          <span>Oxford Brookes University</span>
+          <span>Oxford Brookes University, Oxford, United Kingdom </span>
           <span class="grade">Distinction (1:1)</span>
         </div>
         <div class="edu-card">
           <div class="when">Aug 2019 &ndash; May 2023</div>
-          <h3>BE Mechanical Engineering</h3>
-          <span>University of Mumbai</span>
+          <h3>BEng Mechanical Engineering</h3>
+          <span>University of Mumbai, Maharashtra, India </span>
           <span class="grade">77.66% (UK equivalent &ndash; 1:1)</span>
         </div>
       </div>
@@ -598,7 +552,7 @@
 
   <section id="awards">
     <div class="wrap">
-      <div class="eyebrow">06 / Achievements &amp; awards</div>
+      <div class="eyebrow">05 / Achievements &amp; awards</div>
       <h2 class="title reveal">Recognition along the way.</h2>
       <div class="awards-row reveal">
         <div class="award-card">
@@ -631,20 +585,20 @@
 
   <section id="contact">
     <div class="wrap">
-      <div class="eyebrow">07 / Contact</div>
-      <h2 class="title reveal">Hiring for a design or NVH role?</h2>
-      <p class="lede reveal">I'm looking for graduate and junior opportunities in mechanical design, NVH, vehicle dynamics and CAE. Let's talk about how I could contribute to your team.</p>
+      <div class="eyebrow">06 / Contact</div>
+      <h2 class="title reveal">Get In Touch</h2>
+      <p class="lede reveal">Open for opportunities, collaborations or just a friendly chat. </p>
       <div class="contact-grid">
         <div class="contact-cards reveal">
-          <a class="c-card" href="mailto:durwasbvk04@gmail.com"><span class="label">Email</span><span class="val">durwasbvk04@gmail.com ↗</span></a>
-          <a class="c-card" href="tel:+447586382774"><span class="label">Phone</span><span class="val">075863 82774 ↗</span></a>
-          <a class="c-card" href="https://www.linkedin.com/in/durwas-khot" target="_blank" rel="noopener"><span class="label">LinkedIn</span><span class="val">linkedin.com/in/durwas-khot ↗</span></a>
-          <a class="c-card" href="assets/documents/Durwas_Khot_CV.pdf" download><span class="label">Résumé</span><span class="val">Download Durwas's CV ↓</span></a>
+          <a class="c-card" href="mailto:durwasbvk04@gmail.com"><span class="label">Email</span><span class="val">durwasbvk04@gmail.com </span></a>
+          <a class="c-card" href="tel:+447586382774"><span class="label">Phone</span><span class="val">(+44) 075863 82774 </span></a>
+          <a class="c-card" href="https://www.linkedin.com/in/durwas-khot" target="_blank" rel="noopener"><span class="label">LinkedIn</span><span class="val">linkedin.com/in/durwas-khot </span></a>
+          <a class="c-card" href="assets/documents/Durwas_Khot_CV.pdf" download><span class="label">Curriculum Vitae</span><span class="val">Download my CV </span></a>
         </div>
         <div class="reveal">
           <div class="scope" style="padding:22px;">
-            <div class="scope-head"><span>location.txt</span></div>
-            <p style="color:var(--text-dim);font-size:14px;margin:8px 0 0;">High Wycombe, UK &middot; right to work in the UK, no sponsorship required.</p>
+            <div class="scope-head"><span>Location</span></div>
+            <p style="color:var(--text-dim);font-size:14px;margin:8px 0 0;">High Wycombe, United Kingdom</p>
           </div>
         </div>
       </div>
@@ -654,7 +608,7 @@
 </main>
 
 <footer>
-  <div class="wrap">© Durwas Khot &middot; Mechanical Design &amp; NVH Engineering &middot; High Wycombe, UK</div>
+  <div class="wrap">© Created by Durwas Babasaheb Khot, United Kingdom</div>
 </footer>
 
 <script>
